@@ -1,0 +1,37 @@
+$ git checkout portrait.txt
+$ git checkout HEAD portrait.txt
+$ git add portrait.txt
+$ git commit -m "add moustache"
+[master 82ccffa] add moustache
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+$ git add .
+$ git commit "correct date"
+error: pathspec 'correct date' did not match any file(s) known to git.
+$ git commit -m "correct date"
+[master 5ce3136] correct date
+ 3 files changed, 19 insertions(+), 2 deletions(-)
+ create mode 100644 house.txt
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   house.txt
+        modified:   portrait.txt
+        modified:   tree.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+$ git reset HEAD house.txt
+Unstaged changes after reset:
+M       house.txt
+M       portrait.txt
+M       tree.txt
+$ git add .
+$ git reset HEAD house.txt
+Unstaged changes after reset:
+M       house.txt
+$ git commit -m "2 files"
+[master 4a6c9be] 2 files
+ 2 files changed, 3 insertions(+), 1 deletion(-)
+$
